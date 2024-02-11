@@ -10,3 +10,15 @@
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
+
+body {
+    background-color: pink;
+    color: chocolate;
+}
+
+.button-container {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}

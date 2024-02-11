@@ -1,59 +1,52 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>This is my title</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-        <div class="heading">
-            <h2 class="d-flex justify-content-center">
-                Enter your name (Spaces not included)
-            </h2>
-        </div>
-        <div class="container">
-            <div class="main-content">
-                <div class="d-flex p-2">
-                    <input
-                        type="text"
-                        id="name-input"
-                        class="form-control mb-2"
-                    />
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                        id="fact-button"
-                    >
-                        Submit name
-                    </button>
-                </div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This is my title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="images/cat.png" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="heading">
+        <h2 class="d-flex justify-content-center">
+            Enter your name (Spaces not included)
+        </h2>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <div class="d-flex p-2">
+                <input type="text" id="name-input" class="form-control mb-2" />
+                <button type="submit" class="btn btn-primary" id="fact-button" style="background-color: chocolate">
+                    Submit name
+                </button>
             </div>
         </div>
-        <div id="center-results">
-            <div
-                class="card"
-                style="width: 18rem"
-                class="d-flex justify-content-right"
-            >
-                <div class="card-body text-center">
-                    <h5 class="card-title">Results</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        Information and Spirit Animal
-                    </h6>
-                    <p class="card-text" id="length"></p>
-                    <p class="card-text" id="animal"></p>
-                    <p class="card-text" id="fact"></p>
-                </div>
+    </div>
+    <div id="center-results">
+        <div class="card" style="width: 18rem" class="d-flex justify-content-right">
+            <div class="card-body text-center">
+                <h5 class="card-title">Results</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    Information and Spirit Animal
+                </h6>
+                <p class="card-text" id="length"></p>
+                <p class="card-text" id="animal"></p>
+                <p class="card-text" id="fact"></p>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="scripts/script.js"></script>
-    </body>
+    </div>
+    <div class="button-container d-flex justify-content-right mt-5">
+        <button onclick="refreshPage()" id="refresh-button" class="btn btn-primary d-sm-flex justify-content-evenly">
+            Refresh Page
+        </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
 </html>

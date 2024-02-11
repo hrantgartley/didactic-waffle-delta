@@ -70,3 +70,8 @@ function randomFacts() {
     let index = Math.floor(Math.random() * facts.length)
     return facts[index]
 }
+
+// eslint-disable-next-line no-unused-vars
+function refreshPage() {
+    window.location.reload()
+}
