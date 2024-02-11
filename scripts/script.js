@@ -2,7 +2,11 @@
 $("#fact-button").on("click", function () {
     displayFact()
 })
-
+$("#name-input").on("keypress", function (e) {
+    if (e.which === 13) {
+        displayFact()
+    }
+})
 function getLength() {
     let text = $("#name-input").val()
     if (text !== undefined) {
