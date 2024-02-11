@@ -46,11 +46,13 @@ function getSpiritAnimal() {
 
 function displayFact() {
     let text = $("#name-input").val()
-    // change fact to template string
     let fact = `${text} is ${getLength()} characters long.`
-    $("#length").text(fact)
-    $("#animal").text(`Your spirit animal is: ${getSpiritAnimal()}`)
-    $("#fact").text(`Random Fact:  ${randomFacts()}`)
+    $("#length").hide().text(fact).fadeIn()
+    $("#fact").hide().text(`Random Fact:  ${randomFacts()}`).fadeIn()
+    $("#animal")
+        .hide()
+        .text(`Your spirit animal is: ${getSpiritAnimal()}`)
+        .fadeIn()
 }
 
 function randomFacts() {
