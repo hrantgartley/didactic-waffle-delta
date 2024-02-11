@@ -10,19 +10,50 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="styles/style.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="scripts/script.js"></script>
+        <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <div class="main-content">
-            <input type="text" id="name-input" class="" />
-            <input
-                type="submit"
-                value="Submit name"
-                class="btn btn-primary"
-                id="fact-button"
-            />
+        <div class="heading">
+            <h2 class="d-flex justify-content-center">
+                Enter your name (Spaces not included)
+            </h2>
         </div>
+        <div class="container">
+            <div class="main-content">
+                <div class="d-flex p-2">
+                    <input
+                        type="text"
+                        id="name-input"
+                        class="form-control mb-2"
+                    />
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="fact-button"
+                    >
+                        Submit name
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="center-results">
+            <div
+                class="card"
+                style="width: 18rem"
+                class="d-flex justify-content-right"
+            >
+                <div class="card-body text-center">
+                    <h5 class="card-title">Results</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Information and Spirit Animal
+                    </h6>
+                    <p class="card-text" id="length"></p>
+                    <p class="card-text" id="animal"></p>
+                    <p class="card-text" id="fact"></p>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="scripts/script.js"></script>
     </body>
 </html>

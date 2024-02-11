@@ -1,0 +1,12 @@
+#center-results {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+.heading {
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
