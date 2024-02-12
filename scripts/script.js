@@ -1,29 +1,31 @@
 /* global $ */
 $("#fact-button").on("click", function () {
-    displayFact()
-})
+    displayFact();
+});
+
 $("#name-input").on("keypress", function (e) {
     if (e.which === 13) {
-        displayFact()
+        displayFact();
     }
-})
+});
+
 function getLength() {
-    let text = $("#name-input").val()
+    let text = $("#name-input").val();
     if (text !== undefined) {
-        let count = 0
+        let count = 0;
         for (let i = 0; i < text.length; i++) {
             if (text[i] !== " ") {
-                count++
+                count++;
             }
         }
-        return count
+        return count;
     } else {
-        return 0
+        return 0;
     }
 }
 
 function getSpiritAnimal() {
-    let text = $("#name-input").val()
+    let text = $("#name-input").val();
     if (text !== undefined) {
         let animals = [
             "Cat",
@@ -36,31 +38,41 @@ function getSpiritAnimal() {
             "Fox",
             "Horse",
             "Eagle",
-        ]
-        let index = text.length % animals.length
-        return animals[index]
+        ];
+        let index = text.length % animals.length;
+        return animals[index];
     } else {
-        return "No name"
+        return "No name";
     }
 }
 
 function displayFact() {
-    let text = $("#name-input").val()
-    let fact = `${text} is ${getLength()} characters long.`
-    $("#length").hide().text(fact).fadeIn()
-    $("#fact").hide().text(`Random Fact:  ${randomFacts()}`).fadeIn()
+    let text = $("#name-input").val();
+    let fact = `${text} is ${getLength()} characters long.`;
+    $("#length").hide().text(fact).fadeIn();
+    $("#fact").hide().text(`Random Fact:  ${randomFacts()}`).fadeIn();
     $("#animal")
         .hide()
         .text(`Your spirit animal is: ${getSpiritAnimal()}`)
-        .fadeIn()
+        .fadeIn();
     $("#first-letter")
         .hide()
         .text(`The first letter of your name is: ${text[0]}`)
-        .fadeIn()
+        .fadeIn();
     $("#last-letter")
         .hide()
         .text(`The last letter of your name is: ${text[text.length - 1]}`)
-        .fadeIn()
+        .fadeIn();
+    if (getVowels() === 0) {
+        $("#num-vowels").hide().text(`Your name has no vowels`).fadeIn();
+    } else if (getVowels() === 1) {
+        $("#num-vowels").hide().text(`Your name has 1 vowel`).fadeIn();
+    } else {
+        $("#num-vowels")
+            .hide()
+            .text(`Your name has ${getVowels()} vowels`)
+            .fadeIn();
+    }
 }
 
 function randomFacts() {
@@ -77,12 +89,33 @@ function randomFacts() {
         "Mammoths still walked the Earth when the Great Pyramid was being built.",
         "Rabbit's teeth never stop growing.",
         "The average person spends 6 months of their lifetime waiting on a red light to turn green.",
-    ]
-    let index = Math.floor(Math.random() * facts.length)
-    return facts[index]
+    ];
+    let index = Math.floor(Math.random() * facts.length);
+    return facts[index];
 }
 
 // eslint-disable-next-line no-unused-vars
 function refreshPage() {
-    window.location.reload()
+    window.location.reload();
+}
+
+function getVowels() {
+    let text = $("#name-input").val();
+    if (text !== undefined) {
+        let count = 0;
+        for (let i = 0; i < text.length; i++) {
+            if (
+                text[i] === "a" ||
+                text[i] === "e" ||
+                text[i] === "i" ||
+                text[i] === "o" ||
+                text[i] === "u"
+            ) {
+                count++;
+            }
+        }
+        return count;
+    } else {
+        return 0;
+    }
 }
