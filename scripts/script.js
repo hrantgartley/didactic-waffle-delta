@@ -35,7 +35,7 @@ function getSpiritAnimal() {
             "Wolf",
             "Fox",
             "Horse",
-            "Rabbit",
+            "Eagle",
         ]
         let index = text.length % animals.length
         return animals[index]
@@ -52,6 +52,14 @@ function displayFact() {
     $("#animal")
         .hide()
         .text(`Your spirit animal is: ${getSpiritAnimal()}`)
+        .fadeIn()
+    $("#first-letter")
+        .hide()
+        .text(`The first letter of your name is: ${text[0]}`)
+        .fadeIn()
+    $("#last-letter")
+        .hide()
+        .text(`The last letter of your name is: ${text[text.length - 1]}`)
         .fadeIn()
 }
 
