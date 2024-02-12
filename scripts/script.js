@@ -76,6 +76,7 @@ function randomFacts() {
         "On average, it takes 66 days to form a new habit.",
         "Mammoths still walked the Earth when the Great Pyramid was being built.",
         "Rabbit's teeth never stop growing.",
+        "The average person spends 6 months of their lifetime waiting on a red light to turn green.",
     ]
     let index = Math.floor(Math.random() * facts.length)
     return facts[index]
