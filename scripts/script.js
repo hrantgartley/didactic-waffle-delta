@@ -9,6 +9,10 @@ $("#name-input").on("keypress", function (e) {
     }
 });
 
+/**
+ * Calculates the length of the text entered in the name input field.
+ * @returns {number} The length of the text entered, excluding spaces. Returns 0 if no text is entered.
+ */
 function getLength() {
     let text = $("#name-input").val();
     if (text !== undefined) {
@@ -24,6 +28,10 @@ function getLength() {
     }
 }
 
+/**
+ * Retrieves the spirit animal based on the input name.
+ * @returns {string} The spirit animal.
+ */
 function getSpiritAnimal() {
     let text = $("#name-input").val();
     if (text !== undefined) {
@@ -46,6 +54,9 @@ function getSpiritAnimal() {
     }
 }
 
+/**
+ * Displays various facts about the user's name.
+ */
 function displayFact() {
     let text = $("#name-input").val();
     let fact = `${text} is ${getLength()} characters long.`;
@@ -75,6 +86,10 @@ function displayFact() {
     }
 }
 
+/**
+ * Generates a random fact from an array of facts.
+ * @returns {string} A random fact.
+ */
 function randomFacts() {
     let facts = [
         "Ants stretch when they wake up in the morning.",
@@ -99,6 +114,11 @@ function refreshPage() {
     window.location.reload();
 }
 
+/**
+ * Calculates the number of vowels in the input text.
+ * 
+ * @returns {number} The count of vowels in the input text.
+ */
 function getVowels() {
     let text = $("#name-input").val();
     if (text !== undefined) {
