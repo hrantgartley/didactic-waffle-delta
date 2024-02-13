@@ -116,7 +116,7 @@ function refreshPage() {
 
 /**
  * Calculates the number of vowels in the input text.
- * 
+ *
  * @returns {number} The count of vowels in the input text.
  */
 function getVowels() {
@@ -138,4 +138,13 @@ function getVowels() {
     } else {
         return 0;
     }
+}
+
+// eslint-disable-next-line no-unused-vars
+function validate_input() {
+    let data = $("#name-input").val().trim();
+    if (data.length === 0) {
+        return null;
+    }
+    return data;
 }
