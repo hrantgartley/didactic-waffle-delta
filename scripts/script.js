@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 /* global $ */
+console.log("Document ready");
 $("#fact-button").on("click", function () {
     displayFact();
 });
@@ -148,3 +150,23 @@ function validate_input() {
     }
     return data;
 }
+
+/**
+ * Reverses a given string.
+ *
+ * @param {string} name - The string to be reversed.
+ * @returns {string} - The reversed string.
+ */
+// eslint-disable-next-line no-unused-vars
+function reverseString(name) {
+    return name.split("").reverse().join("");
+}
+
+function sanitizeInput() {
+    let data = $("#name-input").val().trim();
+    return data;
+}
+
+const myFunc = () => {
+    return "Hello";
+};
