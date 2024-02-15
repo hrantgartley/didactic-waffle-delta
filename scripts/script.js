@@ -15,7 +15,7 @@ $("#name-input").on("keypress", function (e) {
  * Calculates the length of the text entered in the name input field.
  * @returns {number} The length of the text entered, excluding spaces. Returns 0 if no text is entered.
  */
-function getLength() {
+function getLen() {
     let text = $("#name-input").val();
     if (text !== undefined) {
         let count = 0;
@@ -47,7 +47,7 @@ function getSpiritAnimal() {
             "Wolf",
             "Fox",
             "Horse",
-            "Eagle",
+            "Eagle"
         ];
         let index = text.length % animals.length;
         return animals[index];
@@ -61,8 +61,10 @@ function getSpiritAnimal() {
  */
 function displayFact() {
     let text = $("#name-input").val();
-    let fact = `${text} is ${getLength()} characters long.`;
+    text = sanitizeInput();
+    let fact = `${text} is ${getLen()} characters long.`;
     $("#length").hide().text(fact).fadeIn();
+    $("#fact").hide().text(`Random Fact:  ${randomFacts()}`).fadeIn();
     $("#fact").hide().text(`Random Fact:  ${randomFacts()}`).fadeIn();
     $("#animal")
         .hide()
@@ -76,16 +78,16 @@ function displayFact() {
         .hide()
         .text(`The last letter of your name is: ${text[text.length - 1]}`)
         .fadeIn();
-    if (getVowels() === 0) {
-        $("#num-vowels").hide().text(`Your name has no vowels`).fadeIn();
-    } else if (getVowels() === 1) {
-        $("#num-vowels").hide().text(`Your name has 1 vowel`).fadeIn();
-    } else {
-        $("#num-vowels")
-            .hide()
-            .text(`Your name has ${getVowels()} vowels`)
-            .fadeIn();
-    }
+    $("#num-vowels")
+        .hide()
+        .text(
+            getVowels() === 0
+                ? "Your name has no vowels"
+                : getVowels() === 1
+                  ? "Your name has 1 vowel"
+                  : `Your name has ${getVowels()} vowels`
+        )
+        .fadeIn();
 }
 
 /**
@@ -105,7 +107,7 @@ function randomFacts() {
         "On average, it takes 66 days to form a new habit.",
         "Mammoths still walked the Earth when the Great Pyramid was being built.",
         "Rabbit's teeth never stop growing.",
-        "The average person spends 6 months of their lifetime waiting on a red light to turn green.",
+        "The average person spends 6 months of their lifetime waiting on a red light to turn green."
     ];
     let index = Math.floor(Math.random() * facts.length);
     return facts[index];
@@ -127,11 +129,11 @@ function getVowels() {
         let count = 0;
         for (let i = 0; i < text.length; i++) {
             if (
-                text[i] === "a" ||
-                text[i] === "e" ||
-                text[i] === "i" ||
-                text[i] === "o" ||
-                text[i] === "u"
+                text[i].toLowerCase() === "a" ||
+                text[i].toLowerCase() === "e" ||
+                text[i].toLowerCase() === "i" ||
+                text[i].toLowerCase() === "o" ||
+                text[i].toLowerCase() === "u"
             ) {
                 count++;
             }
@@ -164,9 +166,6 @@ function reverseString(name) {
 
 function sanitizeInput() {
     let data = $("#name-input").val().trim();
+    data = data.replace(/[^a-zA-Z\s]/g, "");
     return data;
 }
-
-const myFunc = () => {
-    return "Hello";
-};
